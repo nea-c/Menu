@@ -6,7 +6,7 @@ execute unless data storage menu: {is_load:1b} run \
 
 
 ## ダイアログのメニューデータを作成する
-# 記述方法は https://github.com/nea-c/MENU/_memo.md を読んでね
+# 記述方法は https://github.com/nea-c/MENU/blob/master/_memo.md を読んでね
 
 
 data modify storage menu: database append value {Page:0,type:"setting",columns:2,esc_close:true,title:{from_storage:"menu: _sample_text"}}
