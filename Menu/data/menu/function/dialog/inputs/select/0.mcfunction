@@ -8,6 +8,9 @@ execute if data storage menu: macro.s.key run data modify storage menu: macro.ap
 execute if data storage menu: macro.s.width run data modify storage menu: macro.append.width set from storage menu: macro.s.width
 
 
+# initがあるなら入手
+execute if data storage menu: macro.s.init run function menu:dialog/inputs/select/initial/0
+
 # label
 execute if data storage menu: macro.s.label run function menu:dialog/inputs/.common/label.m with storage menu: macro.s
   # labelが存在しないなら非表示

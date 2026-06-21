@@ -22,4 +22,4 @@ data modify storage menu: database append value {Page:1,type:"exit_button",label
 
 data modify storage menu: database append value {Page:0,type:"input_select",label:{nbt:"_sample_text",storage:"menu_sample:",interpret:true},key:"g",width:200,options:[{id:"num_1",display:{text:"表示1"}},{id:"num_2",display:{text:"表示2"}}]}
 # data modify storage menu: database append value {Page:0,type:"input_select",label:{text:"オプションなしtest"},key:"e",width:200,options:[]}
-data modify storage menu: database append value {Page:0,type:"input_select",label:{text:"displayなしオプション"},key:"h",width:200,init:"num_2",options:[{id:"num_1"},{id:"num_2"}]}
+data modify storage menu: database append value {Page:0,type:"input_select",label:{text:"displayなしオプション"},key:"h",width:200,init:{from_storage:"menu_sample: _sample_input_select_id"},options:[{id:"num_1"},{id:"num_2"},{id:"num_3"},{id:"num_4"}]}

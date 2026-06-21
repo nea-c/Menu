@@ -297,7 +297,6 @@ dynamic/run_commandの時に使用するキー
 
 
 
-
 ## type: `input_select`
 <details>
 <summary>クリックして詳細を表示</summary>
@@ -350,7 +349,61 @@ display: 表示名
 直テキスト(`display:"あああ"`のような形式)は動作保証外
 ```
 
+</details>
 
 
+
+
+## type: `input_text`
+<details>
+<summary>クリックして詳細を表示</summary>
+
+### sample
+```mcfunction
+data modify storage menu: database append value {Page:0,type:"input_select",label:{nbt:"_sample_text",storage:"menu_sample:",interpret:true},key:"a",width:200,init:{from_storage:"menu_sample: _sample_id"},options:[{id:"num_1",display:{text:"表示1"}},{id:"num_2",display:{text:"表示2"}}]}
+```
+
+* #### label
+> NULL/COMPOUND
+
+ボタン名  
+表記しなければ自動でラベルが非表示になります  
+直テキスト(`label:"あああ"`のような形式)は動作保証外
+
+* #### key
+> STRING
+
+dynamic/run_commandの時に使用するキー  
+
+* #### width
+> NULL/INT
+
+ボタンサイズ  
+表記しなければ自動で200に割り当てられます  
+サイズを一律で変更したい場合、`menu: database[{Page:0,type:"input_select"}].width`とかに対して値変更を行えば楽かも
+
+* #### init
+> NULL/STRING/COMPOUND
+
+初期値になるデータID  
+optionsのidに当たる部分と同じ文字のデータをtrueにします  
+`{from_storage:"menu_sample: _sample_input_select_id"}`のようなストレージ参照の形式を記述すると自動で変換します
+
+* #### options
+> COMPOUND_LIST
+
+選択肢内容  
+id: dynamic/run_commandに転送される値  
+```md
+> NULL/STRING
+表記しなければ自動で""に割り当てられます
+```
+display: 表示名  
+```md
+> NULL/COMPOUND
+表記しなければ自動でvalueの値が表示されます
+直テキスト(`display:"あああ"`のような形式)は動作保証外
+```
 
 </details>
+

@@ -9,9 +9,6 @@ execute unless data storage menu: macro.s.options[-1] run \
 data modify storage menu: macro.invert set value []
 function menu:dialog/inputs/select/options/1.invert_loop
 
-
 # 逆転したデータを順番に処理
 function menu:dialog/inputs/select/options/2.loop
-
-
 
