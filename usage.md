@@ -177,7 +177,7 @@ data modify storage menu: database append value {Page:0,type:"body_item",item:{f
 * #### show_decoration
 > NULL/BOOL
 
-アイテムの個数や耐久値を表示するか
+アイテムの個数や耐久値を表示するか  
 表記しなければ自動でtrueに割り当てられます
 
 * #### description
