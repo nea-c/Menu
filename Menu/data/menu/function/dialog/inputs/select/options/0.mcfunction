@@ -2,7 +2,7 @@
 
 # データがなければ中断
 execute unless data storage menu: macro.s.options[-1] run \
-  return run data modify storage menu: error set value {text:"のinput_selectのoptionsが存在しません",color:"#ff0000"}
+  return run data modify storage menu: error set value {text:"input_selectのoptionsが存在しません"}
 
 
 # データを逆転
