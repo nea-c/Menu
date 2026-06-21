@@ -81,9 +81,9 @@ data modify storage menu: database append value {Page:0,type:"exit_button",label
 * #### width
 > NULL/INT
 
-ボタンサイズ  
+ボタン幅  
 表記しなければ自動で150に割り当てられます  
-サイズを一律で変更したい場合、`menu: database[{Page:0,type:"button"}].width`とかに対して値変更を行えば楽かも
+幅を一律で変更したい場合、`menu: database[{Page:0,type:"button"}].width`とかに対して値変更を行えば楽かも
 
 * #### action
 > NULL/COMPOUND
@@ -145,9 +145,9 @@ data modify storage menu: database append value {Page:0,type:"body_text",content
 * #### width
 > NULL/INT
 
-ボタンサイズ  
+ボタン幅  
 表記しなければ自動で200に割り当てられます  
-サイズを一律で変更したい場合、`menu: database[{Page:0,type:"body_text"}].width`とかに対して値変更を行えば楽かも
+幅を一律で変更したい場合、`menu: database[{Page:0,type:"body_text"}].width`とかに対して値変更を行えば楽かも
 
 </details>
 
@@ -189,9 +189,9 @@ data modify storage menu: database append value {Page:0,type:"body_item",item:{f
 * #### width
 > NULL/INT
 
-ボタンサイズ  
+ボタン幅  
 表記しなければ自動で16に割り当てられます  
-サイズを一律で変更したい場合、`menu: database[{Page:0,type:"body_item"}].width`とかに対して値変更を行えば楽かも
+幅を一律で変更したい場合、`menu: database[{Page:0,type:"body_item"}].width`とかに対して値変更を行えば楽かも
 
 </details>
 
@@ -267,9 +267,9 @@ dynamic/run_commandの時に使用するキー
 * #### width
 > NULL/INT
 
-スライダーサイズ  
+スライダー幅  
 表記しなければ自動で200に割り当てられます  
-サイズを一律で変更したい場合、`menu: database[{Page:0,type:"input_num"}].width`とかに対して値変更を行えば楽かも
+幅を一律で変更したい場合、`menu: database[{Page:0,type:"input_num"}].width`とかに対して値変更を行えば楽かも
 
 * #### init
 > NULL/INT/COMPOUND
@@ -303,7 +303,7 @@ dynamic/run_commandの時に使用するキー
 
 ### sample
 ```mcfunction
-data modify storage menu: database append value {Page:0,type:"input_select",label:{nbt:"_sample_text",storage:"menu_sample:",interpret:true},key:"a",width:200,options:[{id:"num_1",display:{text:"表示1"}},{id:"num_2",display:{text:"表示2"}}]}
+data modify storage menu: database append value {Page:0,type:"input_select",label:{nbt:"_sample_text",storage:"menu_sample:",interpret:true},key:"a",width:200,init:{from_storage:"menu_sample: _sample_input_select_id"},options:[{id:"num_1",display:{text:"表示1"}},{id:"num_2",display:{text:"表示2"}}]}
 ```
 
 * #### label
@@ -321,9 +321,9 @@ dynamic/run_commandの時に使用するキー
 * #### width
 > NULL/INT
 
-ボタンサイズ  
+ボタン幅  
 表記しなければ自動で200に割り当てられます  
-サイズを一律で変更したい場合、`menu: database[{Page:0,type:"input_select"}].width`とかに対して値変更を行えば楽かも
+幅を一律で変更したい場合、`menu: database[{Page:0,type:"input_select"}].width`とかに対して値変更を行えば楽かも
 
 * #### init
 > NULL/STRING/COMPOUND
@@ -360,7 +360,7 @@ display: 表示名
 
 ### sample
 ```mcfunction
-data modify storage menu: database append value {Page:0,type:"input_select",label:{nbt:"_sample_text",storage:"menu_sample:",interpret:true},key:"a",width:200,init:{from_storage:"menu_sample: _sample_id"},options:[{id:"num_1",display:{text:"表示1"}},{id:"num_2",display:{text:"表示2"}}]}
+data modify storage menu: database append value {Page:0,type:"input_text",label:{nbt:"_sample_text",storage:"menu_sample:",interpret:true},key:"a",width:200,init:{from_storage:"menu_sample: _sample_input_text"}}
 ```
 
 * #### label
@@ -378,32 +378,37 @@ dynamic/run_commandの時に使用するキー
 * #### width
 > NULL/INT
 
-ボタンサイズ  
+入力欄の幅  
 表記しなければ自動で200に割り当てられます  
-サイズを一律で変更したい場合、`menu: database[{Page:0,type:"input_select"}].width`とかに対して値変更を行えば楽かも
+幅を一律で変更したい場合、`menu: database[{Page:0,type:"input_text"}].width`とかに対して値変更を行えば楽かも
+
+* #### max_line
+> NULL/INT
+
+入力可能な最大行数  
+表記しなければ自動で1に割り当てられます
+
+* #### height
+> NULL/INT
+
+入力欄の高さ  
+表記しなければ自動調整機能を使用します
+
 
 * #### init
 > NULL/STRING/COMPOUND
 
 初期値になるデータID  
 optionsのidに当たる部分と同じ文字のデータをtrueにします  
-`{from_storage:"menu_sample: _sample_input_select_id"}`のようなストレージ参照の形式を記述すると自動で変換します
+`{from_storage:"menu_sample: _sample_input_text"}`のようなストレージ参照の形式を記述すると自動で変換します
 
-* #### options
-> COMPOUND_LIST
+* #### max_length
+> NULL/INT
 
-選択肢内容  
-id: dynamic/run_commandに転送される値  
-```md
-> NULL/STRING
-表記しなければ自動で""に割り当てられます
-```
-display: 表示名  
-```md
-> NULL/COMPOUND
-表記しなければ自動でvalueの値が表示されます
-直テキスト(`display:"あああ"`のような形式)は動作保証外
-```
+文字数  
+表記しなければ自動で32に割り当てられます
+
+
 
 </details>
 
