@@ -26,6 +26,12 @@ jsonに追加したfunction内に[記述方法一覧](https://github.com/nea-c/M
 `function #menu:open`で0番をコールします
 
 
+> [!IMPORTANT]
+> このライブラリでは、ページを開いていることをMenuPageスコアで見ています
+> 他のデータパックからダイアログを上書き表示する際は必ずリセットしてください
+
+
+
 ## 提供されるfunctionタグ
 `#menu:open`
 > ページ番号0をコールします。
