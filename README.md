@@ -13,8 +13,7 @@ MinecraftJE 1.21.11 ~
 
 ## 使用方法
 
-`menu/tags/function/_database.json`をあなたのデータパックに作成し、以下の例のように記入  
-jsonに追加したfunction内に[記述方法一覧](https://github.com/nea-c/Menu/blob/master/usage.md)のようにデータを記述します
+`menu/tags/function/_database.json`をあなたのデータパックに作成し、以下の例のように記入
 ```json
 {
   "values": [
@@ -22,7 +21,7 @@ jsonに追加したfunction内に[記述方法一覧](https://github.com/nea-c/M
   ]
 }
 ```
-
+jsonに追加したfunction内に[記述方法一覧](https://github.com/nea-c/Menu/blob/master/usage.md)のようにデータを記述します  
 `function #menu:open`で0番をコールします
 
 
