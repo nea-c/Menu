@@ -26,6 +26,27 @@ jsonに追加したfunction内に[記述方法一覧](https://github.com/nea-c/M
 `function #menu:open`で0番をコールします
 
 
+## 提供されるfunctionタグ
+`#menu:open`
+> ページ番号0をコールします。
+
+`#menu:_database`
+> [!IMPORTANT]
+> functionコマンドから**絶対**に実行しないでください
+
+`#menu:reopen/same_page`
+> 実行者と同じページを開いている人に対してメニューを再描画します
+
+`#menu:reopen/everyone`
+> メニューを開いている全員のメニューを再描画します
+
+`#menu:close/as`
+> メニューを開いている場合、メニューを閉じます
+
+`#menu:close/everyone`
+> メニューを開いている全員のメニューを閉じます
+
+
 ## MenuSampleについて
 
 使用方法の例としておいておきます  
@@ -33,7 +54,7 @@ jsonに追加したfunction内に[記述方法一覧](https://github.com/nea-c/M
 
 ## ライセンス
 
-[Apache 2.0 Licence](https://github.com/nea-c/Menu/blob/master/LICENSE)に基づく。
+[Apache 2.0 Licence](https://github.com/nea-c/Menu/blob/master/LICENSE)に基づく
 
 
 ## 更新履歴

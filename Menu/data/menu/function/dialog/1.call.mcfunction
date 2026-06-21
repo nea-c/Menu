@@ -3,8 +3,8 @@
 scoreboard players enable @s MenuButton
 
 # macro.pageに入っている値を使って該当番号のデータを呼び出す
-data modify storage menu: macro.data set value []
-function menu:dialog/2.get_page_data.m with storage menu: macro
+data modify storage menu: macro set value {}
+function menu:dialog/2.get_page_data.m with storage menu:
 
 # そもそもデータがなければERROR
 execute unless data storage menu: macro.data[-1] run \
@@ -85,6 +85,6 @@ execute unless data storage menu: macro{success:true} run \
 
 
 # 開いているページを設定
-execute store result score @s MenuPage run data get storage menu: macro.Page
+execute store result score @s MenuPage run data get storage menu: CallPage
 
 
