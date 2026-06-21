@@ -21,7 +21,8 @@ MinecraftJE 1.21.11 ~
   ]
 }
 ```
-jsonに追加したfunction内に[記述方法一覧](https://github.com/nea-c/Menu/blob/master/usage.md)のようにデータを記述します  
+jsonに追加したfunction内に[記述方法一覧](https://github.com/nea-c/Menu/blob/master/usage.md)のようにデータを記述します
+
 `function #menu:open`で0番をコールします
 
 
