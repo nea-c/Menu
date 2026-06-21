@@ -19,7 +19,7 @@ data modify storage menu: database append value {Page:0,type:"body_text",content
 data modify storage menu: database append value {Page:0,type:"body_item",item:{from_storage:"menu: _sample_item"},width:16,description:{text:"test"}}
 data modify storage menu: database append value {Page:0,type:"body_item",item:{from_loot:"menu:_sample_item"},width:16,description:{text:"test"}}
 
-data modify storage menu: database append value {Page:0,type:"input_bool",label:{text:"これはテストinputダヨ"},key:"a",init:{from_storage:"menu: _sample_bool"},on_true:"true",on_false:"false"}
+data modify storage menu: database append value {Page:0,type:"input_bool",label:{text:"これはテストinputダヨ"},key:"c",init:{from_storage:"menu: _sample_bool"},on_true:"true",on_false:"false"}
 data modify storage menu: database append value {Page:0,type:"input_num",label:{from_storage:"menu: _sample_text"},key:"a",width:200,init:{from_storage:"menu: _sample_int"},start:0,end:100,step:1}
 
 data modify storage menu: database append value {Page:1,type:"setting",columns:1,esc_close:true,title:{from_storage:"menu: _sample_text"}}
