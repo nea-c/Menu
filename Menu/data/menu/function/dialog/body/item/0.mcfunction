@@ -16,7 +16,7 @@ execute if data storage menu: macro.s.show_decoration run data modify storage me
 execute if data storage menu: macro.s.item run function menu:dialog/body/item/item/0
 
 # description
-execute if data storage menu: macro.s.description run function menu:dialog/body/item/description/0
+execute if data storage menu: macro.s.description run function menu:dialog/body/item/1.description.m with storage menu: macro.s
 
 
 # append
