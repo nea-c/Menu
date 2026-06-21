@@ -29,7 +29,6 @@ execute store result score # MenuButton run data get storage menu: macro._
 
 
 # 生成用ストレージを初期化
-# exit_actionはexit_action:{}の部分ごとstringになるようにする　←予定
 data modify storage menu: macro merge value {dialog_type:"multi_action",body:[],inputs:[],actions:[],exit_action:"",title:'""',can_close_with_escape:true,columns:2}
 
 # settingを適応

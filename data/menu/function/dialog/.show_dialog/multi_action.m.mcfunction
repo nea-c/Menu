@@ -9,6 +9,7 @@ $dialog show @s \
     pause: false,\
     title: $(title),\
     body: $(body),\
+    inputs: $(inputs),\
     exit_action: $(exit_action),\
     actions: $(actions),\
   }

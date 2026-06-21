@@ -7,7 +7,7 @@ execute unless data storage menu: macro.s.action run \
 
 # dynamic/run_commandの時は別処理へ移動
 execute if data storage menu: macro.s.action{type:"dynamic/run_command"} run \
-  return run function menu:dialog/actions/action/dynamic_run_command/0
+  return run function menu:dialog/actions/action/2.dynamic_run_command.m with storage menu: macro.s.action
 
 
 # ButtonNumberをそのまま適応
