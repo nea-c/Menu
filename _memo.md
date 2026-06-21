@@ -13,6 +13,9 @@
 宣言タイプ  
 `setting` `button` `exit_button` `body_text` `body_item` `input_bool` `input_num` `input_select` `input_text`
 
+`button` はダイアログのタイプが`multi_action` `confirmation`の時専用です  
+`confirmation`の時に`button`が2つ以上あるとエラーを出力します
+
 
 ## type: `setting`
 <details>
@@ -194,5 +197,109 @@ data modify storage menu: database append value {Page:0,type:"body_item",item:{f
 ボタンサイズ  
 表記しなければ自動で16に割り当てられます  
 サイズを一律で変更したい場合、`menu: database[{Page:0,type:"body_item"}].width`とかに対して値変更を行えば楽かも
+
+</details>
+
+
+
+
+## type: `input_bool`
+<details>
+<summary>クリックして詳細を表示</summary>
+
+### sample
+```mcfunction
+data modify storage menu: database append value {Page:0,type:"input_bool",label:{from_storage:"menu: _sample_text"},key:"a",init:false,on_true:"true",on_false:"false"}
+```
+
+* #### label
+> COMPOUND
+
+ボタン名  
+`{from_storage:"menu: _sample_text"}`のようなストレージ参照の形式を記述すると自動で変換します  
+直テキスト(`label:"あああ"`のような形式)は動作保証外
+
+* #### key
+> STRING
+
+dynamic/run_commandの時に使用するキー  
+
+* #### init
+> NULL/BOOL/COMPOUND
+
+初期値  
+表記しなければ自動でfalseに割り当てられます  
+`{from_storage:"menu: _sample_bool"}`のようなストレージ参照の形式を記述すると自動で変換します
+
+* #### on_true
+> NULL/STRING
+表記しなければ自動で"true"に割り当てられます
+
+* #### on_false
+> NULL/STRING
+表記しなければ自動で"false"に割り当てられます
+
+</details>
+
+
+## type: `input_num`
+
+<details>
+<summary>クリックして詳細を表示</summary>
+
+### sample
+```mcfunction
+data modify storage menu: database append value {Page:0,type:"input_num",label:{from_storage:"menu: _sample_text"},key:"a",width:200,init:1,start:0,end:100,step:1}
+```
+
+* #### label
+> COMPOUND
+
+ボタン名  
+`{from_storage:"menu: _sample_text"}`のようなストレージ参照の形式を記述すると自動で変換します  
+直テキスト(`label:"あああ"`のような形式)は動作保証外
+
+* #### label_format
+> NULL/STRING/COMPOUND
+
+ボタン名カスタム  
+`{from_storage:"menu: _sample_text"}`のようなストレージ参照の形式を記述すると自動で変換します  
+直テキスト(`label:"あああ"`のような形式)は動作保証外
+
+* #### key
+> STRING
+
+dynamic/run_commandの時に使用するキー  
+
+* #### width
+> NULL/INT
+
+スライダーサイズ  
+表記しなければ自動で200に割り当てられます  
+サイズを一律で変更したい場合、`menu: database[{Page:0,type:"input_num"}].width`とかに対して値変更を行えば楽かも
+
+* #### init
+> NULL/INT/COMPOUND
+
+初期値  
+表記しなければ自動でfalseに割り当てられます  
+`{from_storage:"menu: _sample_bool"}`のようなストレージ参照の形式を記述すると自動で変換します
+
+* #### start
+> INT
+
+スライダーの最小値
+
+* #### end
+> INT
+
+スライダーの最大値
+
+* #### step
+> NULL/INT
+
+スライダーの増減値
+
+
 
 </details>
