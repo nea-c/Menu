@@ -13,20 +13,18 @@ execute unless data storage menu: macro.data[-1] run \
 # exit_buttonのデータ個数を確認
 data modify storage menu: macro._ set value []
 data modify storage menu: macro._ append from storage menu: macro.data[{type:"exit_button"}]
-execute store result score # MenuButton run data get storage menu: macro._
   # 複数存在していたらERROR
-  execute if score # MenuButton matches 2.. run \
+  execute if data storage menu: macro._[-2] run \
     return run tellraw @s {translate:"[Menu] ERROR: ページ%s\n exit_buttonが複数存在しています",color:"#ff0000",with:[{nbt:"macro.Page",storage:"menu:"}]}
   # 存在しなければ追加
-  execute unless score # MenuButton matches 1.. run \
+  execute unless data storage menu: macro._[-1] run \
     data modify storage menu: macro.data append from storage menu: database[{ButtonNumber:-1}]
 
 # settingのデータ個数を確認
 data modify storage menu: macro._ set value []
 data modify storage menu: macro._ append from storage menu: macro.data[{type:"setting"}]
-execute store result score # MenuButton run data get storage menu: macro._
   # 複数存在していたらERROR
-  execute if score # MenuButton matches 2.. run \
+  execute if data storage menu: macro._[-2] run \
     return run tellraw @s {translate:"[Menu] ERROR: ページ%s\n settingが複数存在しています",color:"#ff0000",with:[{nbt:"macro.Page",storage:"menu:"}]}
 
 
@@ -42,8 +40,8 @@ execute if data storage menu: macro.s.title run function menu:dialog/3.title.m w
 execute if data storage menu: macro.s.dialog_type run data modify storage menu: macro.dialog_type set from storage menu: macro.s.dialog_type
 
 
-# confirmationの時、buttonが複数あったらfail
-execute if data storage menu: macro{dialog_type:"confirmation"} run function menu:dialog/4.confirmation_data_check
+# confirmationの時、buttonが複数あったらERROR
+execute if data storage menu: macro{dialog_type:"confirmation"} if function menu:dialog/4.confirmation_data_check run return run function menu:dialog/_error
 
 
 
@@ -74,8 +72,7 @@ execute if data storage menu: macro.s run function menu:dialog/actions/_exit_act
 
 
 # errorがあったらERROR
-execute if data storage menu: error run tellraw @s {translate:"[Menu] ERROR: ページ%s\n %s",color:"#ff0000",with:[{nbt:"macro.Page",storage:"menu:"},{nbt:"error",storage:"menu:",interpret:true}]}
-execute if data storage menu: error run return run data remove storage menu: error
+execute if data storage menu: error run return run function menu:dialog/_error
 
 
 ## show
