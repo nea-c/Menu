@@ -11,7 +11,7 @@ execute if data storage menu: macro.s.step run data modify storage menu: macro.a
 execute if data storage menu: macro.s.label_format run data modify storage menu: macro.append.label_format set from storage menu: macro.s.label_format
 
 # label
-function menu:dialog/inputs/.common/label/0
+function menu:dialog/inputs/.common/label.m with storage menu: macro.s
 # initial
 function menu:dialog/inputs/.common/initial/0
 

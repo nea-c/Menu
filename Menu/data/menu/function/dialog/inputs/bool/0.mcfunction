@@ -10,7 +10,7 @@ execute if data storage menu: macro.s.on_false run data modify storage menu: mac
 
 
 # label
-function menu:dialog/inputs/.common/label/0
+function menu:dialog/inputs/.common/label.m with storage menu: macro.s
 # initial
 function menu:dialog/inputs/.common/initial/0
 

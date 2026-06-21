@@ -23,7 +23,7 @@
 
 ###  sample
 ```mcfunction
-data modify storage menu: database append value {Page:0,type:"setting",dialog_type:"multi_action",columns:2,esc_close:true,title:{from_storage:"menu: _sample_text"}}
+data modify storage menu: database append value {Page:0,type:"setting",dialog_type:"multi_action",columns:2,esc_close:true,title:{nbt:"_sample_text",storage:"menu_sample:",interpret:true}}
 ```
 
 * #### dialog_type
@@ -51,7 +51,6 @@ Escキーで閉じれるかどうか
 
 タイトル表記  
 表記しなければ自動的に`""`が割り当てられます  
-`{from_storage:"menu: _sample_text"}`のようなストレージ参照の形式を記述すると自動で変換します  
 直テキスト(`label:"あああ"`のような形式)は動作保証外
 
 </details>
@@ -62,7 +61,7 @@ Escキーで閉じれるかどうか
 
 ###  sample
 ```mcfunction
-data modify storage menu: database append value {Page:0,type:"button",label:{from_storage:"menu: _sample_text"},tooltip:{text:"サンプル表示されてる～？"},width:150,action:{type:"run_command",value:"function menu:_sample_function",close:true}}
+data modify storage menu: database append value {Page:0,type:"button",label:{nbt:"_sample_text",storage:"menu_sample:",interpret:true},tooltip:{text:"サンプル表示されてる～？"},width:150,action:{type:"run_command",value:"function menu_sample:_sample_function",close:true}}
 data modify storage menu: database append value {Page:0,type:"exit_button",label:{text:"閉じる"}}
 ```
 
@@ -70,7 +69,6 @@ data modify storage menu: database append value {Page:0,type:"exit_button",label
 > COMPOUND
 
 ボタン名  
-`{from_storage:"menu: _sample_text"}`のようなストレージ参照の形式を記述すると自動で変換します  
 直テキスト(`label:"あああ"`のような形式)は動作保証外
 
 * #### tooltip
@@ -78,7 +76,6 @@ data modify storage menu: database append value {Page:0,type:"exit_button",label
 
 ホバー時の表示  
 表記しなければ何もなしになります  
-`{from_storage:"menu: _sample_text"}`のようなストレージ参照の形式を記述すると自動で変換します   
 直テキスト(`label:"あああ"`のような形式)は動作保証外
 
 * #### width
@@ -136,14 +133,13 @@ exit_buttonが存在しないとき、このactionが登録されたボタンが
 
 ### sample
 ```mcfunction
-data modify storage menu: database append value {Page:0,type:"body_text",contents:{from_storage:"menu: _sample_text"},width:200}
+data modify storage menu: database append value {Page:0,type:"body_text",contents:{nbt:"_sample_text",storage:"menu_sample:",interpret:true},width:200}
 ```
 
 * #### contents
 > COMPOUND
 
 内容  
-`{from_storage:"menu: _sample_text"}`のようなストレージ参照の形式を記述すると自動で変換します  
 直テキスト(`label:"あああ"`のような形式)は動作保証外
 
 * #### width
@@ -161,16 +157,16 @@ data modify storage menu: database append value {Page:0,type:"body_text",content
 
 ### sample
 ```mcfunction
-data modify storage menu: database append value {Page:0,type:"body_item",item:{from_storage:"menu: _sample_item"},width:16,description:{text:"test"}}
-data modify storage menu: database append value {Page:0,type:"body_item",item:{from_loot:"menu:_sample_item"},width:16,description:{text:"test"}}
+data modify storage menu: database append value {Page:0,type:"body_item",item:{from_storage:"menu_sample: _sample_item"},width:16,description:{text:"test"}}
+data modify storage menu: database append value {Page:0,type:"body_item",item:{from_loot:"menu_sample:_sample_item"},width:16,description:{text:"test"}}
 ```
 
 * #### item
 > COMPOUND
 
 表示するアイテム  
-`{from_storage:"menu: _sample_item"}`のようなストレージ参照の形式を記述すると自動で変換します  
-`{from_loot:"menu:_sample_item"}`のようなルートテーブル参照の形式を記述すると自動で変換します
+`{from_storage:"menu_sample: _sample_item"}`のようなストレージ参照の形式を記述すると自動で変換します  
+`{from_loot:"menu_sample:_sample_item"}`のようなルートテーブル参照の形式を記述すると自動で変換します
 
 * #### show_tooltip
 > NULL/BOOL
@@ -188,7 +184,6 @@ data modify storage menu: database append value {Page:0,type:"body_item",item:{f
 > NULL/COMPOUND
 
 アイテムの右側に表示される文章  
-`{from_storage:"menu: _sample_text"}`のようなストレージ参照の形式を記述すると自動で変換します  
 直テキスト(`label:"あああ"`のような形式)は動作保証外
 
 * #### width
@@ -209,14 +204,13 @@ data modify storage menu: database append value {Page:0,type:"body_item",item:{f
 
 ### sample
 ```mcfunction
-data modify storage menu: database append value {Page:0,type:"input_bool",label:{from_storage:"menu: _sample_text"},key:"a",init:false,on_true:"true",on_false:"false"}
+data modify storage menu: database append value {Page:0,type:"input_bool",label:{nbt:"_sample_text",storage:"menu_sample:",interpret:true},key:"a",init:false,on_true:"true",on_false:"false"}
 ```
 
 * #### label
 > COMPOUND
 
 ボタン名  
-`{from_storage:"menu: _sample_text"}`のようなストレージ参照の形式を記述すると自動で変換します  
 直テキスト(`label:"あああ"`のような形式)は動作保証外
 
 * #### key
@@ -229,7 +223,7 @@ dynamic/run_commandの時に使用するキー
 
 初期値  
 表記しなければ自動でfalseに割り当てられます  
-`{from_storage:"menu: _sample_bool"}`のようなストレージ参照の形式を記述すると自動で変換します
+`{from_storage:"menu_sample: _sample_bool"}`のようなストレージ参照の形式を記述すると自動で変換します
 
 * #### on_true
 > NULL/STRING
@@ -251,14 +245,13 @@ dynamic/run_commandの時に使用するキー
 
 ### sample
 ```mcfunction
-data modify storage menu: database append value {Page:0,type:"input_num",label:{from_storage:"menu: _sample_text"},key:"a",width:200,init:1,start:0,end:100,step:1}
+data modify storage menu: database append value {Page:0,type:"input_num",label:{nbt:"_sample_text",storage:"menu_sample:",interpret:true},key:"a",width:200,init:1,start:0,end:100,step:1}
 ```
 
 * #### label
 > COMPOUND
 
 ボタン名  
-`{from_storage:"menu: _sample_text"}`のようなストレージ参照の形式を記述すると自動で変換します  
 直テキスト(`label:"あああ"`のような形式)は動作保証外
 
 * #### label_format
@@ -283,7 +276,7 @@ dynamic/run_commandの時に使用するキー
 
 初期値  
 表記しなければ自動でfalseに割り当てられます  
-`{from_storage:"menu: _sample_bool"}`のようなストレージ参照の形式を記述すると自動で変換します
+`{from_storage:"menu_sample: _sample_bool"}`のようなストレージ参照の形式を記述すると自動で変換します
 
 * #### start
 > INT
@@ -311,7 +304,7 @@ dynamic/run_commandの時に使用するキー
 
 ### sample
 ```mcfunction
-data modify storage menu: database append value {Page:0,type:"input_select",label:{from_storage:"menu: _sample_text"},key:"a",width:200,options:[{}]}
+data modify storage menu: database append value {Page:0,type:"input_select",label:{nbt:"_sample_text",storage:"menu_sample:",interpret:true},key:"a",width:200,options:[{id:"num_1",display:{text:"表示1"}},{id:"num_2",display:{text:"表示2"}}]}
 ```
 
 * #### label
@@ -319,7 +312,6 @@ data modify storage menu: database append value {Page:0,type:"input_select",labe
 
 ボタン名  
 表記しなければ自動でラベルが非表示になります  
-`{from_storage:"menu: _sample_text"}`のようなストレージ参照の形式を記述すると自動で変換します  
 直テキスト(`label:"あああ"`のような形式)は動作保証外
 
 * #### key
@@ -334,11 +326,29 @@ dynamic/run_commandの時に使用するキー
 表記しなければ自動で200に割り当てられます  
 サイズを一律で変更したい場合、`menu: database[{Page:0,type:"input_select"}].width`とかに対して値変更を行えば楽かも
 
+* #### init
+> NULL/STRING/COMPOUND
+
+初期値になるデータID  
+↓のidに当たる部分と同じデータをtrueにします
+
+
+
 * #### options
 > COMPOUND_LIST
 
 選択肢内容  
-`{from_storage:"menu: _sample_text"}`のようなストレージ参照の形式を記述すると自動で変換します  
+id: dynamic/run_commandに転送される値  
+```md
+> NULL/STRING
+表記しなければ自動で""に割り当てられます
+```
+display: 表示名  
+```md
+> NULL/COMPOUND
+表記しなければ自動でvalueの値が表示されます
+直テキスト(`display:"あああ"`のような形式)は動作保証外
+```
 
 
 

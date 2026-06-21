@@ -12,9 +12,9 @@ data modify storage menu: macro.append set value {}
 execute if data storage menu: macro.s.width run data modify storage menu: macro.append.width set from storage menu: macro.s.width
 
 # label
-function menu:dialog/actions/label/0
+function menu:dialog/actions/1.label.m with storage menu: macro.s
 # tooltip
-function menu:dialog/actions/tooltip/0
+function menu:dialog/actions/2.tooltip.m with storage menu: macro.s
 # action
 function menu:dialog/actions/action/0
 
