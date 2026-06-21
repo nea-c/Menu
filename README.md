@@ -31,7 +31,7 @@ jsonに追加したfunction内に[記述方法一覧](https://github.com/nea-c/M
 > ページ番号0をコールします。
 
 `#menu:_database`
-> [!IMPORTANT]
+> [!CAUTION]
 > functionコマンドから**絶対**に実行しないでください
 
 `#menu:reopen/same_page`
