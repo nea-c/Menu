@@ -233,10 +233,12 @@ dynamic/run_commandの時に使用するキー
 
 * #### on_true
 > NULL/STRING
+
 表記しなければ自動で"true"に割り当てられます
 
 * #### on_false
 > NULL/STRING
+
 表記しなければ自動で"false"に割り当てられます
 
 </details>
@@ -260,16 +262,14 @@ data modify storage menu: database append value {Page:0,type:"input_num",label:{
 直テキスト(`label:"あああ"`のような形式)は動作保証外
 
 * #### label_format
-> NULL/STRING/COMPOUND
+> NULL/STRING
 
-ボタン名カスタム  
-`{from_storage:"menu: _sample_text"}`のようなストレージ参照の形式を記述すると自動で変換します  
-直テキスト(`label:"あああ"`のような形式)は動作保証外
+ボタン名カスタム
 
 * #### key
 > STRING
 
-dynamic/run_commandの時に使用するキー  
+dynamic/run_commandの時に使用するキー
 
 * #### width
 > NULL/INT
@@ -299,6 +299,47 @@ dynamic/run_commandの時に使用するキー
 > NULL/INT
 
 スライダーの増減値
+
+</details>
+
+
+
+
+## type: `input_select`
+<details>
+<summary>クリックして詳細を表示</summary>
+
+### sample
+```mcfunction
+data modify storage menu: database append value {Page:0,type:"input_select",label:{from_storage:"menu: _sample_text"},key:"a",width:200,options:[{}]}
+```
+
+* #### label
+> NULL/COMPOUND
+
+ボタン名  
+表記しなければ自動でラベルが非表示になります  
+`{from_storage:"menu: _sample_text"}`のようなストレージ参照の形式を記述すると自動で変換します  
+直テキスト(`label:"あああ"`のような形式)は動作保証外
+
+* #### key
+> STRING
+
+dynamic/run_commandの時に使用するキー  
+
+* #### width
+> NULL/INT
+
+ボタンサイズ  
+表記しなければ自動で200に割り当てられます  
+サイズを一律で変更したい場合、`menu: database[{Page:0,type:"input_select"}].width`とかに対して値変更を行えば楽かも
+
+* #### options
+> COMPOUND_LIST
+
+選択肢内容  
+`{from_storage:"menu: _sample_text"}`のようなストレージ参照の形式を記述すると自動で変換します  
+
 
 
 
