@@ -275,7 +275,6 @@ dynamic/run_commandの時に使用するキー
 > NULL/INT/COMPOUND
 
 初期値  
-表記しなければ自動でfalseに割り当てられます  
 `{from_storage:"menu_sample: _sample_bool"}`のようなストレージ参照の形式を記述すると自動で変換します
 
 * #### start
