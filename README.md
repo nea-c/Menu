@@ -5,7 +5,7 @@
 
 ## 最新
 
-r1
+r2
 
 ## 動作要件
 
@@ -36,6 +36,9 @@ MinecraftJE 1.21.11 ~
 `#menu:open`
 > ページ番号0をコールします。
 
+`#menu:page_open.m`
+> `function #menu:page_open.m {Page:<INT>}`で`<INT>`に入力された対象ページを開きます
+
 `#menu:_database`
 > [!CAUTION]
 > functionコマンドから**絶対**に実行しないでください
@@ -53,6 +56,7 @@ MinecraftJE 1.21.11 ~
 > メニューを開いている全員のメニューを閉じます
 
 
+
 ## MenuSampleについて
 
 使用方法の例としておいておきます  
@@ -64,6 +68,9 @@ MinecraftJE 1.21.11 ~
 
 
 ## 更新履歴
+
+* r2
+  * `#menu:page_open.m`を追加
 
 * r1
   * 初版
