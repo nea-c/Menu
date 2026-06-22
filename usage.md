@@ -398,9 +398,8 @@ dynamic/run_commandの時に使用するキー
 * #### init
 > NULL/STRING/COMPOUND
 
-初期値になるデータID  
-optionsのidに当たる部分と同じ文字のデータをtrueにします  
-`{from_storage:"menu_sample: _sample_input_text"}`のようなストレージ参照の形式を記述すると自動で変換します
+初期値になる文字  
+
 
 * #### max_length
 > NULL/INT
