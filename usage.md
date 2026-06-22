@@ -8,7 +8,7 @@
 0番が`function #menu:`で呼び出されるデフォルトページです
 
 * #### type
-> TEXT
+> STRING
 
 宣言タイプ  
 `setting` `button` `exit_button` `body_text` `body_item` `input_bool` `input_num` `input_select` `input_text`
