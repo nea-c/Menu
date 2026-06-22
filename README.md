@@ -36,6 +36,10 @@ MinecraftJE 1.21.11 ~
 `#menu:open`
 > ページ番号0をコールします。
 
+`#menu:call`
+> `data modify storage menu: CallPage set value <INT>`を入力後、  
+> `function #menu:call`を実行すると`<INT>`に入力された対象ページを開きます
+
 `#menu:page_open.m`
 > `function #menu:page_open.m {Page:<INT>}`で`<INT>`に入力された対象ページを開きます
 
