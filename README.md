@@ -5,7 +5,7 @@
 
 ## 最新
 
-r2
+r3
 
 ## 動作要件
 
@@ -72,6 +72,9 @@ MinecraftJE 1.21.11 ~
 
 
 ## 更新履歴
+
+* r3
+  * `#menu:call`を追加
 
 * r2
   * `#menu:page_open.m`を追加
