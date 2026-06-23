@@ -5,7 +5,7 @@
 
 ## 最新
 
-r4
+r5
 
 ## 動作要件
 
@@ -47,6 +47,9 @@ MinecraftJE 1.21.11 ~
 > [!CAUTION]
 > functionコマンドから**絶対**に実行しないでください
 
+`#menu:reopen/as`
+> 実行者の開いているメニューを再描画します
+
 `#menu:reopen/same_page`
 > 実行者と同じページを開いている人に対してメニューを再描画します
 
@@ -72,6 +75,9 @@ MinecraftJE 1.21.11 ~
 
 
 ## 更新履歴
+
+* r5
+  * `#menu:reopen/as`を追加
 
 * r4
   * `#menu:reopen/same_page`がページ0を開く問題の修正
