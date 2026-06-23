@@ -6,6 +6,17 @@ scoreboard players enable @s MenuButton
 data modify storage menu: macro set value {}
 function menu:dialog/2.get_page_data.m with storage menu:
 
+
+# visible.from_storageのある特殊なデータを抽出
+data modify storage menu: macro.list set value []
+data modify storage menu: macro.list append from storage menu: macro.data[{visible:{}}]
+# データが存在するならloop処理へ移行
+execute if data storage menu: macro.list[-1] run function menu:dialog/_visible_from_storage/0.loop
+
+# visible:falseを削除
+data remove storage menu: macro.data[{visible:false}]
+
+
 # そもそもデータがなければERROR
 execute unless data storage menu: macro.data[-1] run \
   return run tellraw @s {translate:"[Menu] ERROR: ページ%s\n データが存在しません",color:"#ff0000",with:[{nbt:"CallPage",storage:"menu:"}]}

@@ -7,7 +7,7 @@ data modify storage menu: database append value {Page:0,type:"button",label:{nbt
 data modify storage menu: database append value {Page:0,type:"button",label:{text:"だいなみっくこまんど"},tooltip:{text:"サンプルツールチップ"},width:100,action:{type:"dynamic/run_command",value:'function menu_sample:_sample_function2.m {in:"$(a)"}',close:true}}
 data modify storage menu: database append value {Page:0,type:"button",label:{text:"ページ1へ遷移"},tooltip:{text:"サンプルツールチップ"},width:100,action:{type:"page_change",value:1,close:false}}
 data modify storage menu: database append value {Page:0,type:"exit_button",label:{text:"閉じる"},width:250}
-data modify storage menu: database append value {Page:0,type:"body_text",contents:{text:"body文字"},width:300}
+data modify storage menu: database append value {Page:0,type:"body_text",visible:{from_storage:"menu_sample: _sample_bool_visible"},contents:{text:"body文字"},width:300}
 data modify storage menu: database append value {Page:0,type:"body_text",contents:{nbt:"_sample_text",storage:"menu_sample:",interpret:true},width:300}
 data modify storage menu: database append value {Page:0,type:"body_item",item:{from_storage:"menu_sample: _sample_item"},width:16,description:{text:"サンプルアイテム説明"}}
 data modify storage menu: database append value {Page:0,type:"body_item",item:{from_loot:"menu_sample:_sample_item"},width:16,description:{nbt:"_sample_text",storage:"menu_sample:",interpret:true}}

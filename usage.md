@@ -16,6 +16,13 @@
 `button` はダイアログのタイプが`multi_action` `confirmation`の時専用です  
 `confirmation`の時に`button`が2つ以上あるとエラーを出力します
 
+* #### visible
+> NULL/BOOL/COMPOUND
+
+表示するか  
+表記しなければ自動的にtrueが割り当てられます  
+`{from_storage:"menu_sample: _sample_bool_visible"}`のようなストレージ参照の形式を記述すると自動で変換します  
+
 
 ## type: `setting`
 <details>
