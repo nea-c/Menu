@@ -26,7 +26,7 @@ MinecraftJE 1.21.11 ~
 3. `function #menu:open`で0番をコールします
 
 
-> [!IMPORTANT]
+> [!CAUTION]
 > このライブラリでは、ページを開いていることをMenuPageスコアで見ています  
 > 他のデータパックからダイアログを上書き表示する際は必ずリセットしてください
 
@@ -44,7 +44,7 @@ MinecraftJE 1.21.11 ~
 > `function #menu:page_open.m {Page:<INT>}`で`<INT>`に入力された対象ページを開きます
 
 `#menu:_database`
-> [!CAUTION]
+> [!WARNING]
 > functionコマンドから**絶対**に実行しないでください
 
 `#menu:reopen/as`
