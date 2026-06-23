@@ -77,7 +77,7 @@ MinecraftJE 1.21.11 ~
 ## 更新履歴
 
 * r6
-  * 記述データにvisibleオプションを追加
+  * 記述データに[visible](https://github.com/nea-c/Menu/blob/master/usage.md#visible)オプションを追加
 
 * r5
   * `#menu:reopen/as`を追加
