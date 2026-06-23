@@ -5,7 +5,7 @@
 
 ## 最新
 
-r3
+r4
 
 ## 動作要件
 
@@ -72,6 +72,9 @@ MinecraftJE 1.21.11 ~
 
 
 ## 更新履歴
+
+* r4
+  * `#menu:reopen/same_page`がページ0を開く問題の修正
 
 * r3
   * `#menu:call`を追加
