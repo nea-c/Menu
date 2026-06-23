@@ -251,13 +251,13 @@ data modify storage menu: database append value {Page:0,type:"input_num",label:{
 * #### label
 > COMPOUND
 
-ボタン名  
+スライダー名  
 直テキスト(`label:"あああ"`のような形式)は動作保証外
 
 * #### label_format
 > NULL/STRING
 
-ボタン名カスタム
+スライダー名カスタム
 
 * #### key
 > STRING
