@@ -18,6 +18,7 @@
   "has_ceiling": false,
   "has_skylight": true,
   "has_fixed_time": true,
+  "has_ender_dragon_fight": false,
   "height": 64,
   "infiniburn": "#infiniburn_overworld",
   "logical_height": 64,
