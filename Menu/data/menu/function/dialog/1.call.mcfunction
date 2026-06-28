@@ -47,6 +47,7 @@ data remove storage menu: macro.s
 data modify storage menu: macro.s set from storage menu: macro.data[{type:"setting"}]
 execute if data storage menu: macro.s.columns run data modify storage menu: macro.columns set from storage menu: macro.s.columns
 execute if data storage menu: macro.s.esc_close run data modify storage menu: macro.can_close_with_escape set from storage menu: macro.s.esc_close
+execute unless data storage menu: macro.s.title.italic run data modify storage menu: macro.s.title.italic set value false
 execute if data storage menu: macro.s.title run function menu:dialog/3.title.m with storage menu: macro.s
 execute if data storage menu: macro.s.dialog_type run data modify storage menu: macro.dialog_type set from storage menu: macro.s.dialog_type
 
