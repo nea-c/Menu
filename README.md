@@ -78,6 +78,7 @@ MinecraftJE 1.21.11 ~
 
 * r7
   * `setting`のtitleに`{text:"日本語"}`のようなデータを入れていた際にメニューが開けなくなる問題の修正
+  * 26.1以降のバージョンで読み込めない問題の修正
 
 * r6
   * 記述データに[visible](https://github.com/nea-c/Menu/blob/master/usage.md#visible)オプションを追加
